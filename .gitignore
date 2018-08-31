@@ -7,3 +7,9 @@ cmake_install.cmake
 install_manifest.txt
 compile_commands.json
 CTestTestfile.cmake
+/.vs/Game2/v15/ipch/AutoPCH/b146cd6315ec75af/MAIN.ipch
+/.vs/Game2/v15/.suo
+/.vs/Game2/v15/Browse.VC.db
+/.vs/Game2/v15/Browse.VC.opendb
+/.vs/ProjectSettings.json
+/.vs/slnx.sqlite
