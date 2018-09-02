@@ -1,6 +1,7 @@
 #pragma once
 
 #include <vector>
+#include <memory>
 
 #include "squad.h"
 #include "cell.h"
@@ -11,5 +12,8 @@ class World {
 
 public:
 	World(size_t width, size_t heght);
+
+	void addUnit(std::unique_ptr<Squad> squad, size_t x, size_t y);
+
 	friend std::ostream& operator<< (std::ostream& lhs, const World& rhs);
 };

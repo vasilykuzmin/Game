@@ -14,6 +14,15 @@ World::World(size_t width_, size_t height_)
 	}
 }
 
+void World::addUnit(unique_ptr<Squad> squad, size_t x, size_t y) {
+	if (x >= cells.size() || y >= cells[0].size()) {
+		return;
+	}
+	if (cells[x][y].squad == nullptr) {
+		cells[x][y].squad = move(squad);
+	}
+}
+
 ostream& operator<< (ostream& lhs, const World& rhs) {
 	for (size_t i = 0; i < rhs.cells.size(); ++i) {
 		if (i % 2 == 0) {
