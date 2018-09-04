@@ -7,10 +7,10 @@
 #include "cell.h"
 
 class World {
+public:
 	const size_t width, height;
 	std::vector<std::vector<Cell>> cells;
 
-public:
 	World(size_t width, size_t heght);
 
 	void addUnit(std::unique_ptr<Squad> squad, size_t x, size_t y);

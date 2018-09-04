@@ -13,7 +13,7 @@ int main(void) {
 	cin >> w;
 	World world(w, h);
 	while (true) {
-#ifdef WINDOWS
+#ifdef WIN32
 		system("cls");
 #else
 		system("clear");
