@@ -23,6 +23,20 @@ Damage Squad::calc_damage()
 	return ans;
 }
 
+bool Squad::take_damage(Damage damage)
+{
+	if (damage.armor_damage >= health.armor)
+	{
+		health.armor = 0;
+		health.hp -= damage.armor_damage * 0.6;
+	}
+	health.hp -= damage.hp_damage;
+	if (health.hp <= 0)
+		return 1;
+	else
+		return 0;
+}
+
 unique_ptr<Squad> Squad::create(string type) {
 	if (type == "Archer") {
 		return make_unique<Archer>();
