@@ -23,11 +23,6 @@ Damage Squad::calc_damage()
 	return ans;
 }
 
-Health Squad::get_health()
-{
-	return h;
-}
-
 unique_ptr<Squad> Squad::create(string type) {
 	if (type == "Archer") {
 		return make_unique<Archer>();

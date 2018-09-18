@@ -13,13 +13,12 @@ protected:
 	int damage;
 	double armor_hp_ratio;
 	std::string damage_type;
+	Health health;
 public:
 	virtual char toChar() = 0;
 	virtual Damage calc_damage();
 
 	static std::unique_ptr<Squad> create(std::string type);
-
-	Health h;
 };
 
 class Archer : public Squad {
@@ -29,8 +28,8 @@ public:
 
 	Archer ()
 	{
-		h.armor = 10;
-		h.hp = 20;
+		health.armor = 10;
+		health.hp = 20;
 		damage_type = "Physics";
 		damage = 10;
 		armor_hp_ratio = 3;
@@ -44,8 +43,8 @@ public:
 
 	Draco()
 	{
-		h.armor = 30;
-		h.hp = 5;
+		health.armor = 30;
+		health.hp = 5;
 		damage_type = "Physics";
 		damage = 10;
 		armor_hp_ratio = 1;
