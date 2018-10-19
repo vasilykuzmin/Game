@@ -37,6 +37,15 @@ bool Squad::take_damage(Damage damage)
 		return 0;
 }
 
+void Squad::attack(World world, size_t x, size_t y)
+{
+	Damage squad_damage = calc_damage();
+	bool is_dead;
+	is_dead = world.cells[x][y].squad->take_damage(squad_damage);
+	if (is_dead)
+		world.cells[x][y].squad = nullptr;
+}
+
 unique_ptr<Squad> Squad::create(string type) {
 	if (type == "Archer") {
 		return make_unique<Archer>();

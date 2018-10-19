@@ -18,6 +18,7 @@ public:
 	virtual char toChar() = 0;
 	virtual Damage calc_damage();
 	virtual bool take_damage(Damage damage);
+	virtual void attack(World world, size_t x, size_t y);
 
 	static std::unique_ptr<Squad> create(std::string type);
 };
